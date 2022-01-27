@@ -1,0 +1,65 @@
+<div class="container p-3 ">
+<div class="row ">
+
+<div class="col-md-3"></div>
+<div class="col-md-5">
+
+
+{{!-- signup status alert --}}
+
+{{#if status}}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{error}}</strong>You can login now.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if signinErrStatus}}
+
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{error}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{{/if}}
+
+
+
+{{!-- signup form --}}
+
+<div class="card p-4 signin-card">
+<h5 class="card-title text-center">Sign In</h5>
+<div class="login_img">
+<img src="https://www.panchayat.gov.in/documents/448457/448495/login.png/92d5909f-8ad5-d817-b2b4-39c5647529f5?t=1632213688785&imagePreview=1"width="100px" alt="">
+
+</div>
+    <form action="/signin"method="POST">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"name="userEmail"minlength="10" aria-describedby="emailHelp">
+ 
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control"name="userPassword"minlength="6" id="exampleInputPassword1">
+  </div>
+  <div class="d-grid">
+  <button type="submit" class="btn btn-signin ">Submit</button>
+
+  </div>
+</form>
+</div>
+</div>
+<div class="col-md-3"></div>
+</div>
+</div>
+
+<div class="container-fluid position-absolute bottom-0 footer">
+
+
+    <p class="text-center text-white p-2">&copy copy rights reserved 2022</p>
+    
+
+</div>

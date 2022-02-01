@@ -1,0 +1,50 @@
+<div class="container">
+
+
+    <div class="row">
+
+        <h1 class="text-center">Your Profile</h1>
+
+
+        <div class="col-md-3"></div>
+
+
+
+        <div class="col-md-5 col-sm-12">
+            <div class="card p-4 d-flex justify-content-center align-items-center">
+
+                <img src="/uploads/{{user.profile_image}}"width="70px" alt="">
+                
+
+               <table class="table">
+
+                   <th>
+                          <tr>
+                            <td>Email:</td>
+                            <td>{{user.email}}</td>
+                          </tr>
+                          <tr>
+                            <td>Username:</td>
+                            <td>{{user.username}}</td>
+                          </tr>
+                          <tr>
+                            <td>District:</td>
+                            <td>{{user.district}}</td>
+                          </tr>
+                          <tr>
+                            <td>Eligibility:</td>
+                            <td>{{user.eligibility}}</td>
+                          </tr>
+
+                   </th>
+
+               </table>
+
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+
+    </div>
+
+
+</div>

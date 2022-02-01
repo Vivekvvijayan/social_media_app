@@ -1,7 +1,10 @@
-const checkForm = () =>{
-    
-        const name = document.getElementById('image_file').value; 
-        console.log(name);
 
+        var like = document.querySelector('.fa-heart');
 
-}
+        like.addEventListener('click', function() {
+
+                console.log('clicked');
+                like.classList.toggle('text-danger');
+
+        });
+     

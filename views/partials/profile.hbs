@@ -1,32 +1,68 @@
 <div class="container">
 
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-sm-12 col-md-6">
+    {{#if status}}
 
-<div class="card mt-5">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{error}}</strong>Profile already exist.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{{/if}}
 
 
-<!-- On tables -->
-<table class="table">
-  <thead>
-    <tr>
-    
-      <th scope="col">Username</th>
-      <th scope="col">Email</th>
-      <th scope="col">Time of login</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-    
-    </tr>
+    <div class="card p-5 mt-5"></div>
+
+        <form action="/createProfile"enctype="multipart/form-data" method="POST">
+  <div class="mb-3">
+
+     <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="exampleInputPassword1"name="email"required>
+  </div>
+     <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Username</label>
+    <input type="text" class="form-control" id="exampleInputPassword1"name="username"required>
+  </div>
+     <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">profile Image</label>
+    <input type="file" class="form-control" id="exampleInputPassword1"name="profile_image"required>
+  </div>
+     <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">localility</label>
+    <select name="district" id="locality">
+      <option value="kazargod">Kazargode</option>
+      <option value="kanoor">Kannur</option>
+      <option value="vayanad">Vayanad</option>
+      <option value="kozhikode">Kozhikode</option>
+      <option value="malapuram">Malappuram</option>
+      <option value="palakad">Palakkad</option>
+      <option value="thrissur">Thrissur</option>
+      <option value="ernakulam">Eranakulam</option>
+      <option value="idukki">Idukki</option>
+      <option value="kottayam">Kottayam</option>
+      <option value="alapuzha">Alappuzha</option>
+      <option value="pathnamthitta">Pathanamthiita</option>
+      <option value="kollam">Kollam</option>
+      <option value="thiruvananthapuram">thiruvananthapuram</option>
+    </select>
+  </div>
+     <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">type of work</label>
+    <input type="text" class="form-control" id="exampleInputPassword1"name="eligibility">
+  </div>
  
-    
-  </tbody>
-</table>
+  </div>
+  
+ 
+  <button type="submit" class="btn btn-signin">Submit</button>
+</form>
 
-
+    </div>
+  </div>
+  <div class="col-md-2"></div>
 </div>
 
 </div>

@@ -334,6 +334,13 @@ router.post('/upload-post', checkSession, postUpload.single('post_image'), funct
     profile_image_url = result.profile_image;
     eligibility = result.eligibility;
     console.log(eligibility);
+var time;
+    if(new Date().getHours()>12){
+      time=new Date().getHours()-12+":"+new Date().getMinutes()+" PM";
+    }
+    else{
+      time=new Date().getHours()+":"+new Date().getMinutes()+" AM";
+    }
 
     const postDetails = {
 
@@ -343,7 +350,7 @@ router.post('/upload-post', checkSession, postUpload.single('post_image'), funct
       post_image: req.file.filename,
       job: eligibility,
       postedDate: new Date().toLocaleDateString(),
-      postedTime: new Date().getHours() + ":" + new Date().getMinutes()
+      time: new Date().getHours() + ":" + new Date().getMinutes()
 
     }
 

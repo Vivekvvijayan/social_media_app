@@ -336,7 +336,7 @@ router.post('/upload-post', checkSession, postUpload.single('post_image'), funct
     console.log(eligibility);
 var time;
     if(new Date().getHours()>12){
-      time=new Date().getHours()-12+":"+new Date().getMinutes()+" PM";
+      time=(new Date().getHours()-12)+":"+new Date().getMinutes()+" PM";
     }
     else{
       time=new Date().getHours()+":"+new Date().getMinutes()+" AM";
@@ -350,7 +350,7 @@ var time;
       post_image: req.file.filename,
       job: eligibility,
       postedDate: new Date().toLocaleDateString(),
-      time: new Date().getHours() + ":" + new Date().getMinutes()
+      postedTime: time
 
     }
 

@@ -26,7 +26,7 @@
                             <img src="/posts/{{post_image}}"class="post_img" alt="">
                         </div>
 
-                        <div v class="reactions_post">
+                        <div class="reactions_post">
 
                            <i class="far fa-heart react_icons"></i> <i class="far fa-comment-dots react_icons ml-4"></i> <i class="far fa-share-square react_icons ml-4"></i>
                 
@@ -41,5 +41,25 @@
                         <a href="#"class="btn btn-outline-dark mt-3">Message</a>
                </div>
                </div>
+
+
+               {{!-- <script>
+                function likePost(){
+                  var post_id = {{post_id}};
+                  var user_id = {{user_id}};
+                  
+                  $.ajax({
+                      url:'/like',
+                      type:'POST',
+                      data:{
+                          post_id:post_id,
+                          user_id:user_id,
+                         
+                      },
+                      success:function(data){
+                          console.log(data);
+                      }
+                  });
+               </script> --}}
 
                

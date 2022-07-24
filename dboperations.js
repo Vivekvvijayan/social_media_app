@@ -50,7 +50,6 @@ module.exports={
                         mongodb.getDb().collection('signup').findOne({email:userEmail},function(err,result){
                             if(err) reject(err)
                             
-
                             if(result){
                                 bcrypt.compare(userPassword,result.password,function(err,bcryptOutput){
                                     if(err) reject(err)
@@ -90,9 +89,6 @@ module.exports={
                 }
 
             })
-
-
-
         },
 
         getUserProfile:function(userEmail){
@@ -134,7 +130,7 @@ module.exports={
         },
         uploadPost:function(postDetails){
 
-            return new Promise((resolve,reject)=>{
+            return new Promise((resolve,reject) => {
 
                 try{
 
@@ -233,6 +229,24 @@ module.exports={
             })
 
                         
+        },
+
+        likePost:function(postId){
+                
+                return new Promise((resolve,reject)=>{
+    
+                    try{
+    
+                        mongodb.getDb().collection('posts').updateOne({_id:mongodb.getObjectId(postId)},{$inc:{likes:1}},function(err,result){
+                            if(err) reject(err)
+                            resolve(result)
+                        })
+                    }catch(err){
+                        console.log(err);
+                    }
+    
+                })
+    
         }
 
 

@@ -245,6 +245,18 @@ router.post('/signup', function (req, res, next) {
 });
 
 
+// like post
+
+router.post('/like',function(req,res,next){
+
+  dboperations.likePost(req.body.postId,req.session.userId).then(result=>{
+
+    res.send(result);
+  
+
+})
+
+})
 
 // sigin functionality appear here.
 
@@ -325,15 +337,13 @@ router.post('/createProfile', checkSession, upload.single('profile_image'), func
 
 router.post('/upload-post', checkSession, postUpload.single('post_image'), function (req, res, next) {
 
-
-
   dboperations.fetchProfile(req.session.userId).then(result => {
 
 
     postHolder = result.username;
     profile_image_url = result.profile_image;
     eligibility = result.eligibility;
-    console.log(eligibility);
+    
 var time;
     if(new Date().getHours()>12){
       time=(new Date().getHours()-12)+":"+new Date().getMinutes()+" PM";
@@ -358,7 +368,7 @@ var time;
     databaseOps.uploadPost(postDetails).then(result => {
 
       if (result) {
-
+        
         res.render('partials/dashboard', { admin: req.session.isLoggedIn, postingStatus: true });
       }
       else {
@@ -371,18 +381,9 @@ var time;
     }
     )
 
-
-
-
-
   }).catch(err => {
     console.log(err)
   })
-
-
-
-
-
 
 })
 
